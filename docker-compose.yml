@@ -1,0 +1,31 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+    volumes:
+      - .:/app
+    networks:
+      - backend_network
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - '3001:3000'
+    environment:
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+    depends_on:
+      - backend
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+    driver: bridge
