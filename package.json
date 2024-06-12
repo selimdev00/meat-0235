@@ -1,0 +1,11 @@
+{
+  "name": "meat-0235",
+  "version": "1.0.0",
+  "description": "Welcome...",
+  "scripts": {
+    "deploy": "docker-compose up --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

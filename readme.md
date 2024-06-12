@@ -4,8 +4,12 @@ Welcome...
 
 <hr>
 
-All env options are in `.env.example` files in `client` and `backend`
+## Deploy with docker
 
+1. Copy all environment variables from `.env.example` files in `client` and `backend` to `.env` files
+
+2. ```npm run deploy``` (docker-compose needed)
+3. Enjoy! - http://localhost:4001 (client) + http://localhost:4000 (backend)
 <hr>
 
 ## backend (Express.js + Typescript)

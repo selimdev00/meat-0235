@@ -1,5 +1,4 @@
-# Use the official Nuxt 3 image as the base image
-FROM node:18 AS build
+FROM node:18
 
 WORKDIR /app
 
@@ -11,12 +10,6 @@ COPY . .
 
 RUN npm run build
 
-FROM node:18-slim
+EXPOSE ${PORT}
 
-WORKDIR /app
-
-COPY --from=build /app/dist ./dist
-
-EXPOSE 3000
-
-CMD ["node", "dist/server/index.js"]
+CMD ["node", ".output/server/index.mjs"]

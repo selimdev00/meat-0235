@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE ${PORT}
 
-CMD ["node", "src/server.js"]
+CMD ["npm", "run", "prod"]
